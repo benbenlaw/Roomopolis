@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "roomopolis:block/basic_room_key_block"
+    }
+  }
+}

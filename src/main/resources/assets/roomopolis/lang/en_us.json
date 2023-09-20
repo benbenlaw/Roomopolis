@@ -1,0 +1,12 @@
+{
+  "block.roomopolis.basic_room_block": "Room Block",
+  "block.roomopolis.basic_room_key_block": "Basic Room Key Block",
+  "block.roomopolis.advanced_room_key_block": "Advanced Room Key Block",
+  "block.roomopolis.elite_room_key_block": "Elite Room Key Block",
+
+  "item.roomopolis.basic_room_key": "Basic Key",
+  "item.roomopolis.advanced_room_key": "Advanced Key",
+  "item.roomopolis.elite_room_key": "Elite Key",
+
+  "itemGroup.roomopolis": "Roomopolis"
+}
