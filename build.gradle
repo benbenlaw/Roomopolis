@@ -127,12 +127,17 @@ repositories {
 
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.20.1-47.0.1'
+
+    //Forge
+    minecraft 'net.minecraftforge:forge:1.20.1-47.2.1'
 
     //Opolis Utilities
 
-    compileOnly fg.deobf("curse.maven:opolis-utilities-649644:4653445")
-    runtimeOnly fg.deobf("curse.maven:opolis-utilities-649644:4653445")
+    compileOnly fg.deobf("curse.maven:opolis-utilities-649644:5076299")
+    runtimeOnly fg.deobf("curse.maven:opolis-utilities-649644:5076299")
+
+    //Caveopolis
+    runtimeOnly fg.deobf("curse.maven:caveopolis-mod-639186:5033743")
 
     //JEI
 
@@ -140,6 +145,9 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 
+    // mango's multiblock system
+    implementation fg.deobf("curse.maven:mangos-multiblock-library-966061:5144465")
+    
 }
 
 // Example for how to get properties into the manifest for reading at runtime.

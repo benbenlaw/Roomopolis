@@ -1,8 +1,8 @@
 package com.benbenlaw;
 
-import com.benbenlaw.block.ModBlocks;
-import com.benbenlaw.item.ModCreativeTab;
-import com.benbenlaw.item.ModItems;
+import com.benbenlaw.roomopolis.block.ModBlocks;
+import com.benbenlaw.roomopolis.item.ModCreativeTab;
+import com.benbenlaw.roomopolis.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;

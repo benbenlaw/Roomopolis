@@ -1,7 +1,7 @@
-package com.benbenlaw.block;
+package com.benbenlaw.roomopolis.block;
 
 import com.benbenlaw.Roomopolis;
-import com.benbenlaw.item.ModItems;
+import com.benbenlaw.roomopolis.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
