@@ -4,9 +4,16 @@
   "block.roomopolis.advanced_room_key_block": "Advanced Room Key Block",
   "block.roomopolis.elite_room_key_block": "Elite Room Key Block",
 
-  "item.roomopolis.basic_room_key": "Basic Key",
-  "item.roomopolis.advanced_room_key": "Advanced Key",
-  "item.roomopolis.elite_room_key": "Elite Key",
+  "item.roomopolis.corridor_key_1": "Corridor Key 1",
+  "item.roomopolis.corridor_key_2": "Corridor Key 2",
+  "item.roomopolis.corridor_key_3": "Corridor Key 3",
+  "item.roomopolis.short_room_key": "Short Room Key",
+  "item.roomopolis.normal_room_key": "Normal Room Key",
+  "item.roomopolis.tall_room_key": "Tall Room Key",
+  "item.roomopolis.key_block_remover": "Key Block Remover",
+  "item.roomopolis.room_topper_key": "Room Topper Key",
+
+
 
   "itemGroup.roomopolis": "Roomopolis"
 }

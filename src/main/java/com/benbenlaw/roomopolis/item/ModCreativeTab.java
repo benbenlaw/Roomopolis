@@ -1,7 +1,7 @@
-package com.benbenlaw.item;
+package com.benbenlaw.roomopolis.item;
 
 import com.benbenlaw.Roomopolis;
-import com.benbenlaw.block.ModBlocks;
+import com.benbenlaw.roomopolis.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -14,18 +14,30 @@ public class ModCreativeTab {
 
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Roomopolis.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab> STRAINERS_TAB = CREATIVE_MODE_TABS.register("roomopolis", () -> CreativeModeTab.builder()
+    public static final RegistryObject<CreativeModeTab> ROOMOPOLIS_TAB = CREATIVE_MODE_TABS.register("roomopolis", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> ModItems.BASIC_ROOM_KEY.get().getDefaultInstance())
+            .icon(() -> ModItems.NORMAL_ROOM_KEY.get().getDefaultInstance())
             .title(Component.translatable("itemGroup.roomopolis"))
             .displayItems((parameters, output) -> {
 
+
                 output.accept(ModBlocks.BASIC_ROOM_BLOCK.get());
-                output.accept(ModItems.BASIC_ROOM_KEY.get());
                 output.accept(ModBlocks.BASIC_ROOM_KEY_BLOCK.get());
-                output.accept(ModItems.ADVANCED_ROOM_KEY.get());
                 output.accept(ModBlocks.ADVANCED_ROOM_KEY_BLOCK.get());
-                output.accept(ModItems.ELITE_ROOM_KEY.get());
+
+                output.accept(ModItems.SHORT_ROOM_KEY.get());
+                output.accept(ModItems.TALL_ROOM_KEY.get());
+                output.accept(ModItems.NORMAL_ROOM_KEY.get());
+
+                output.accept(ModItems.CORRIDOR_KEY_1.get());
+                output.accept(ModItems.CORRIDOR_KEY_2.get());
+                output.accept(ModItems.CORRIDOR_KEY_3.get());
+
+                output.accept(ModItems.ROOM_TOPPER_KEY.get());
+
+                output.accept(ModItems.KEY_BLOCK_REMOVER.get());
+
+                output.accept(ModBlocks.ELITE_ROOM_KEY_BLOCK.get());
                 output.accept(ModBlocks.ELITE_ROOM_KEY_BLOCK.get());
 
             }).build());
