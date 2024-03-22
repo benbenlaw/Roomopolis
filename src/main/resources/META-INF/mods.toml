@@ -40,4 +40,12 @@ Adds key block that place rooms
    ordering="NONE"
    side="BOTH"
 
+[[dependencies.roomopolis]]
+   modId="caveopolis"
+   mandatory=true
+   # This version range declares a minimum of the current minecraft version up to but not including the next major version
+   versionRange="[1.20.1-2.8.4,)"
+   ordering="NONE"
+   side="BOTH"
+
 

@@ -14,6 +14,7 @@ public class ModTags {
     public static class Blocks {
 
         public static final TagKey<Block> REPLACEABLE_BLOCKS = tag("replaceable_blocks");
+        public static final TagKey<Block> KEY_BLOCK_SMART_BLOCKS = tag("key_block_smart_blocks");
 
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(Roomopolis.MOD_ID, name));
@@ -27,6 +28,7 @@ public class ModTags {
     public static class Items {
 
         public static final TagKey<Item> REPLACEABLE_BLOCKS = tag("replaceable_blocks");
+        public static final TagKey<Item> KEY_BLOCK_SMART_BLOCKS = tag("key_block_smart_blocks");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(Roomopolis.MOD_ID, name));

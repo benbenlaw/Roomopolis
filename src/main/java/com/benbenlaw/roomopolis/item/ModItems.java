@@ -5,11 +5,17 @@ import com.benbenlaw.Roomopolis;
 import com.benbenlaw.roomopolis.item.custom.CorridorKeys.CorridorKey1;
 import com.benbenlaw.roomopolis.item.custom.CorridorKeys.CorridorKey2;
 import com.benbenlaw.roomopolis.item.custom.CorridorKeys.CorridorKey3;
+import com.benbenlaw.roomopolis.item.custom.ElementalKeys.AirKey;
+import com.benbenlaw.roomopolis.item.custom.ElementalKeys.EarthKey;
+import com.benbenlaw.roomopolis.item.custom.ElementalKeys.FireKey;
+import com.benbenlaw.roomopolis.item.custom.ElementalKeys.WaterKey;
 import com.benbenlaw.roomopolis.item.custom.KeyBlockRemover;
 import com.benbenlaw.roomopolis.item.custom.RoomKeys.NormalRoomKey;
 import com.benbenlaw.roomopolis.item.custom.RoomKeys.RoomTopperKey;
 import com.benbenlaw.roomopolis.item.custom.RoomKeys.ShortRoomKey;
 import com.benbenlaw.roomopolis.item.custom.RoomKeys.TallRoomKey;
+import com.benbenlaw.roomopolis.item.custom.WallKeys.ClearWall3x3;
+import com.benbenlaw.roomopolis.item.custom.WallKeys.ClearWal9x4;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -35,6 +41,25 @@ public class ModItems {
             new Item.Properties()));
     public static final RegistryObject<Item> ROOM_TOPPER_KEY = ITEMS.register("room_topper_key", () -> new RoomTopperKey(
             new Item.Properties()));
+    public static final RegistryObject<Item> WALL_REMOVER_KEY_1 = ITEMS.register("wall_remover_key_1", () -> new ClearWal9x4(
+            new Item.Properties()));
+    public static final RegistryObject<Item> WALL_REMOVER_KEY_2 = ITEMS.register("wall_remover_key_2", () -> new ClearWall3x3(
+            new Item.Properties()));
+
+    //Elemental Keys
+   public static final RegistryObject<Item> FIRE_KEY = ITEMS.register("fire_key", () -> new FireKey(
+            new Item.Properties()));
+   public static final RegistryObject<Item> EARTH_KEY = ITEMS.register("earth_key", () -> new EarthKey(
+            new Item.Properties()));
+   public static final RegistryObject<Item> AIR_KEY = ITEMS.register("air_key", () -> new AirKey(
+            new Item.Properties()));
+   public static final RegistryObject<Item> WATER_KEY = ITEMS.register("water_key", () -> new WaterKey(
+            new Item.Properties()));
+
+
+
+
+
 
     public static final RegistryObject<Item> KEY_BLOCK_REMOVER = ITEMS.register("key_block_remover", () -> new KeyBlockRemover(
             new Item.Properties()));

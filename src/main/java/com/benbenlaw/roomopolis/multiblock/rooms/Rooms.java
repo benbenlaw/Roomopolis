@@ -22,26 +22,30 @@ public class Rooms {
     public Rooms() {
     }
     public static void init() {
-        MANAGER.register("test", BASIC_ROOM);
+        MANAGER.register("basic_room", BASIC_ROOM);
     }
 
 
     private static final Block roomBlock = ModBlocks.BASIC_ROOM_BLOCK.get();
     private static final Block air = Blocks.AIR;
-    private static final Block bricks = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("caveopolis:light_blue_colored_stone_bricks"));
-    private static final Block glass = Blocks.GLASS; // ForgeRegistries.BLOCKS.getValue(new ResourceLocation("glassential:glass_light"));
+    public static Block bricks = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("caveopolis:light_blue_colored_stone_bricks"));
+
+
+    private static final Block vanillaGlass = Blocks.GLASS;
+    private static final Block glassentialGlass = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("glassential:glass_light"));
+    private static final Block glass = ModList.get().isLoaded("glassential") ? glassentialGlass : vanillaGlass;
     private static final Block keyBlock = ModBlocks.BASIC_ROOM_KEY_BLOCK.get();
 
     static {
 
-        SimpleMultiBlockAislePatternBuilder pattern = SimpleMultiBlockAislePatternBuilder.start()
+        SimpleMultiBlockAislePatternBuilder basicRoom = SimpleMultiBlockAislePatternBuilder.start()
                 .aisle("BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBKBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB")
-                .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         G", "B         B", "B         G", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
-                .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         G", "B         B", "B         G", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
-                .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         G", "B         B", "B         G", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
-                .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         G", "B         B", "B         G", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
+                .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         B", "B         B", "B         B", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
+                .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         B", "B         B", "B         B", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
+                .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         B", "B         B", "B         B", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
+                .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         B", "B         B", "B         B", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
                 .aisle("BBBBBBBBBBB", "B         B", "B         B", "B         B", "B         B", "B         B", "B         B", "B         B", "B         B", "B         B", "BBBBBBBBBBB")
-                .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         G", "B         B", "B         G", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
+                .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         B", "B         B", "B         B", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
                 .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         G", "B         B", "B         G", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
                 .aisle("BGGGBKBGGGB", "G         G", "G         G", "G         G", "B         G", "K         K", "B         G", "G         G", "G         G", "G         G", "BGGGBKBGGGB")
                 .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         G", "B    *    B", "B         G", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
@@ -53,18 +57,17 @@ public class Rooms {
                 .where('K', a -> a.getState().is(keyBlock)
                 );
 
-        pattern.block('*', air::defaultBlockState);
-        pattern.block(' ', air::defaultBlockState);
-        pattern.block('B', bricks::defaultBlockState);
-        pattern.block('G', glass::defaultBlockState);
-        pattern.block('K', keyBlock::defaultBlockState);
+        basicRoom.block('*', air::defaultBlockState);
+        basicRoom.block(' ', air::defaultBlockState);
+        basicRoom.block('B', bricks::defaultBlockState);
+        basicRoom.block('G', glass::defaultBlockState);
+        basicRoom.block('K', keyBlock::defaultBlockState);
 
-        BASIC_ROOM = pattern.build();
-    }
+        BASIC_ROOM = basicRoom.build();
 
-    static {
 
-        SimpleMultiBlockAislePatternBuilder pattern = SimpleMultiBlockAislePatternBuilder.start()
+
+        SimpleMultiBlockAislePatternBuilder tallRoom = SimpleMultiBlockAislePatternBuilder.start()
                 .aisle("BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBKBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB")
                 .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         B", "B         B", "B         B", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
                 .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         B", "B         B", "B         B", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
@@ -88,17 +91,17 @@ public class Rooms {
                 .where('K', a -> a.getState().is(keyBlock)
                 );
 
-        pattern.block('*', air::defaultBlockState);
-        pattern.block(' ', air::defaultBlockState);
-        pattern.block('B', bricks::defaultBlockState);
-        pattern.block('G', glass::defaultBlockState);
-        pattern.block('K', keyBlock::defaultBlockState);
+        tallRoom.block('*', air::defaultBlockState);
+        tallRoom.block(' ', air::defaultBlockState);
+        tallRoom.block('B', bricks::defaultBlockState);
+        tallRoom.block('G', glass::defaultBlockState);
+        tallRoom.block('K', keyBlock::defaultBlockState);
 
-        TALL_ROOM = pattern.build();
-    }
-    static {
+        TALL_ROOM = tallRoom.build();
 
-        SimpleMultiBlockAislePatternBuilder pattern = SimpleMultiBlockAislePatternBuilder.start()
+
+
+        SimpleMultiBlockAislePatternBuilder shortRoom = SimpleMultiBlockAislePatternBuilder.start()
                 .aisle("BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBKBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB", "BBBBBBBBBBB")
                 .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         B", "B         B", "B         B", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
                 .aisle("BGGGBBBGGGB", "G         G", "G         G", "G         G", "B         B", "B         B", "B         B", "G         G", "G         G", "G         G", "BGGGBBBGGGB")
@@ -113,17 +116,17 @@ public class Rooms {
                 );
 
 
-        pattern.block('*', air::defaultBlockState);
-        pattern.block(' ', air::defaultBlockState);
-        pattern.block('B', bricks::defaultBlockState);
-        pattern.block('G', glass::defaultBlockState);
-        pattern.block('K', keyBlock::defaultBlockState);
+        shortRoom.block('*', air::defaultBlockState);
+        shortRoom.block(' ', air::defaultBlockState);
+        shortRoom.block('B', bricks::defaultBlockState);
+        shortRoom.block('G', glass::defaultBlockState);
+        shortRoom.block('K', keyBlock::defaultBlockState);
 
-        SHORT_ROOM = pattern.build();
-    }
-    static {
+        SHORT_ROOM = shortRoom.build();
 
-        SimpleMultiBlockAislePatternBuilder pattern = SimpleMultiBlockAislePatternBuilder.start()
+
+
+        SimpleMultiBlockAislePatternBuilder topperRoom = SimpleMultiBlockAislePatternBuilder.start()
                 .aisle("           ", "           ", "           ", "           ", "     B     ", "    BBB    ", "     B     ", "           ", "           ", "           ", "           ")
                 .aisle("           ", "           ", "     B     ", "   BBBBB   ", "   BBBBB   ", "  BBBBBBB  ", "   BBBBB   ", "   BBBBB   ", "     B     ", "           ", "           ")
                 .aisle("           ", "    BBB    ", "  BBBBBBB  ", "  BB   BB  ", " BB     BB ", " BB     BB ", " BB     BB ", "  BB   BB  ", "  BBBBBBB  ", "    BBB    ", "           ")
@@ -137,13 +140,13 @@ public class Rooms {
                 );
 
 
-        pattern.block('*', air::defaultBlockState);
-        pattern.block(' ', air::defaultBlockState);
-        pattern.block('B', bricks::defaultBlockState);
-        pattern.block('G', glass::defaultBlockState);
-        pattern.block('K', keyBlock::defaultBlockState);
+        topperRoom.block('*', air::defaultBlockState);
+        topperRoom.block(' ', air::defaultBlockState);
+        topperRoom.block('B', bricks::defaultBlockState);
+        topperRoom.block('G', glass::defaultBlockState);
+        topperRoom.block('K', keyBlock::defaultBlockState);
 
-        ROOM_TOPPER = pattern.build();
+        ROOM_TOPPER = topperRoom.build();
     }
 
 

@@ -35,6 +35,14 @@ public class ModCreativeTab {
 
                 output.accept(ModItems.ROOM_TOPPER_KEY.get());
 
+                output.accept(ModItems.WALL_REMOVER_KEY_1.get());
+                output.accept(ModItems.WALL_REMOVER_KEY_2.get());
+
+                output.accept(ModItems.FIRE_KEY.get());
+                output.accept(ModItems.EARTH_KEY.get());
+                output.accept(ModItems.AIR_KEY.get());
+                output.accept(ModItems.WATER_KEY.get());
+
                 output.accept(ModItems.KEY_BLOCK_REMOVER.get());
 
                 output.accept(ModBlocks.ELITE_ROOM_KEY_BLOCK.get());

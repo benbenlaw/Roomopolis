@@ -17,6 +17,8 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.level.NoteBlockEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -79,9 +81,11 @@ public class KeyBlockRemover extends Item {
             assert player != null;
             if (level.getBlockState(blockPos).is(ModBlocks.BASIC_ROOM_KEY_BLOCK.get())) {
                 Block sameBlockSides = level.getBlockState(abovePos).getBlock();
+                BlockState sameBlockSidesState = level.getBlockState(abovePos);
+
                 Block sameBlockUp = level.getBlockState(blockPos.west()).getBlock();
 
-                if (sameBlockSides != Blocks.AIR) {
+                if (sameBlockSides != Blocks.AIR && sameBlockSidesState.is(ModTags.Blocks.KEY_BLOCK_SMART_BLOCKS)) {
                     if (level.getBlockState(belowPos).is(sameBlockSides) && level.getBlockState(leftPos).is(sameBlockSides) && level.getBlockState(rightPos).is(sameBlockSides)) {
                         String translatedName = sameBlockSides.getName().getString();
                         level.setBlockAndUpdate(blockPos, sameBlockSides.defaultBlockState());
@@ -90,7 +94,7 @@ public class KeyBlockRemover extends Item {
                     }
                 }
 
-                else if (sameBlockUp != Blocks.AIR) {
+                else if (sameBlockUp != Blocks.AIR && level.getBlockState(blockPos.west()).is(ModTags.Blocks.KEY_BLOCK_SMART_BLOCKS)) {
                     if (level.getBlockState(blockPos.east()).is(sameBlockUp) && level.getBlockState(blockPos.north()).is(sameBlockUp) && level.getBlockState(blockPos.south()).is(sameBlockUp)) {
                         String translatedName = sameBlockUp.getName().getString();
                         level.setBlockAndUpdate(blockPos, sameBlockUp.defaultBlockState());
