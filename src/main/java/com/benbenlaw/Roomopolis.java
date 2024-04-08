@@ -1,6 +1,7 @@
 package com.benbenlaw;
 
 import com.benbenlaw.roomopolis.block.ModBlocks;
+import com.benbenlaw.roomopolis.client.RoomTooltipComponent;
 import com.benbenlaw.roomopolis.config.RoomopolisConfigFile;
 import com.benbenlaw.roomopolis.item.ModCreativeTab;
 import com.benbenlaw.roomopolis.item.ModItems;
@@ -52,6 +53,8 @@ public class Roomopolis {
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModEvents {
+
+
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
@@ -60,6 +63,8 @@ public class Roomopolis {
             });
         }
     }
+
+
 
 
 }

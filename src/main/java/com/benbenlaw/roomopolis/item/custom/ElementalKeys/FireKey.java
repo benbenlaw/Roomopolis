@@ -139,10 +139,14 @@ public class FireKey extends Item {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
         if(Screen.hasShiftDown()) {
-            components.add(Component.literal("Can be used on the sides of Key Blocks to create a small (3x3x5) internal corridor.").withStyle(ChatFormatting.GREEN));
+            components.add(Component.literal("Can be used on a Shrine Activation Key Block.").withStyle(ChatFormatting.GREEN));
         }
-        else {
+        if (Screen.hasControlDown()) {
+            components.add(Component.literal("Converts a Shrine into a Fire Shrine.").withStyle(ChatFormatting.GREEN));
+
+        } else {
             components.add(Component.literal("Hold SHIFT for more information").withStyle(ChatFormatting.BLUE));
+            components.add(Component.literal("Hold CTRL for uses").withStyle(ChatFormatting.BLUE));
         }
     }
 

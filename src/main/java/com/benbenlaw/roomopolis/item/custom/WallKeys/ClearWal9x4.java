@@ -72,10 +72,15 @@ public class ClearWal9x4 extends Item {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
         if(Screen.hasShiftDown()) {
-            components.add(Component.literal("Can be used on the sides of Key Blocks to clears a 7x4 wall.").withStyle(ChatFormatting.GREEN));
+            components.add(Component.literal("Can be used on the sides of Key Blocks to clear a wall.").withStyle(ChatFormatting.GREEN));
         }
-        else {
+        if (Screen.hasControlDown()) {
+            components.add(Component.literal("Length x Width x Height.").withStyle(ChatFormatting.GREEN));
+            components.add(Component.literal("1x7x4 internal room size.").withStyle(ChatFormatting.GREEN));
+
+        } else {
             components.add(Component.literal("Hold SHIFT for more information").withStyle(ChatFormatting.BLUE));
+            components.add(Component.literal("Hold CTRL for removal size").withStyle(ChatFormatting.BLUE));
         }
     }
 

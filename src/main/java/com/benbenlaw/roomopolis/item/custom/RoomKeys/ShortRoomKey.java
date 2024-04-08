@@ -1,6 +1,8 @@
 package com.benbenlaw.roomopolis.item.custom.RoomKeys;
 
+import com.benbenlaw.opolisutilities.config.ConfigFile;
 import com.benbenlaw.roomopolis.block.ModBlocks;
+import com.benbenlaw.roomopolis.config.RoomopolisConfigFile;
 import com.benbenlaw.roomopolis.multiblock.rooms.Clear;
 import com.benbenlaw.roomopolis.multiblock.rooms.Rooms;
 import com.benbenlaw.roomopolis.util.ModTags;
@@ -58,15 +60,19 @@ public class ShortRoomKey extends Item {
                     player.sendSystemMessage(Component.literal("Placing Short Room and Clearing Wall (9x4)").withStyle(ChatFormatting.GREEN));
                     shrinkItem(player, stack);
                 }
-                if (direction == Direction.UP) {
-                    Clear.CLEAR_9x9_UP.construct(level, adjustmentHeightPos.above(), rotation);
-                    player.sendSystemMessage(Component.literal("Placing Additional Room Layer and Clearing Floor/Roof (3x3)").withStyle(ChatFormatting.GREEN));
-                    shrinkItem(player, stack);
-                }
                 if (direction == Direction.DOWN) {
                     Clear.CLEAR_9x9_UP.construct(level, adjustmentHeightPos.above(), rotation);
                     player.sendSystemMessage(Component.literal("Placing Additional Room Layer and Clearing Floor/Roof (3x3)").withStyle(ChatFormatting.GREEN));
                     shrinkItem(player, stack);
+                }
+                if (direction == Direction.UP && blockPos.getY() > RoomopolisConfigFile.roomPlacementLowestBlockY.get()) {
+                    Clear.CLEAR_9x9_UP.construct(level, adjustmentHeightPos.above(), rotation);
+                    player.sendSystemMessage(Component.literal("Placing Additional Room Layer and Clearing Floor/Roof (3x3)").withStyle(ChatFormatting.GREEN));
+                    shrinkItem(player, stack);
+                }
+                if (direction == Direction.UP && blockPos.getY() < RoomopolisConfigFile.roomPlacementLowestBlockY.get()) {
+                    player.sendSystemMessage(Component.literal("Cannot Place any lower!").withStyle(ChatFormatting.GREEN));
+
                 }
 
 
@@ -89,11 +95,17 @@ public class ShortRoomKey extends Item {
         if(Screen.hasShiftDown()) {
             components.add(Component.literal("Can be used on the sides of Key Blocks to create a Short Room.").withStyle(ChatFormatting.GREEN));
             components.add(Component.literal("Can be used on the top/bottom of Key Blocks to create a Short Room above/below.").withStyle(ChatFormatting.GREEN));
+        }
 
-        }
-        else {
+        if (Screen.hasControlDown()) {
+                components.add(Component.literal("Length x Width x Height.").withStyle(ChatFormatting.GREEN));
+                components.add(Component.literal("9x9x4 internal room size.").withStyle(ChatFormatting.GREEN));
+
+        } else {
             components.add(Component.literal("Hold SHIFT for more information").withStyle(ChatFormatting.BLUE));
+            components.add(Component.literal("Hold CTRL for room size").withStyle(ChatFormatting.BLUE));
         }
+
 
     }
 

@@ -84,13 +84,13 @@ public class CorridorKey1 extends Item {
         if (Screen.hasShiftDown()) {
             components.add(Component.literal("Can be used on the sides of Key Blocks to create a small (3x3x5) internal corridor.").withStyle(ChatFormatting.GREEN));
         }
-
         if (Screen.hasControlDown()) {
-
-
+            components.add(Component.literal("Length x Width x Height.").withStyle(ChatFormatting.GREEN));
+            components.add(Component.literal("5x3x3 internal room size.").withStyle(ChatFormatting.GREEN));
 
         } else {
             components.add(Component.literal("Hold SHIFT for more information").withStyle(ChatFormatting.BLUE));
+            components.add(Component.literal("Hold CTRL for room size").withStyle(ChatFormatting.BLUE));
         }
     }
 

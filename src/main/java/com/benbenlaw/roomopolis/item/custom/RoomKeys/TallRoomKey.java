@@ -78,8 +78,13 @@ public class TallRoomKey extends Item {
         if(Screen.hasShiftDown()) {
             components.add(Component.literal("Can be used on the sides of Key Blocks to create a Tall Room.").withStyle(ChatFormatting.GREEN));
         }
-        else {
+        if (Screen.hasControlDown()) {
+            components.add(Component.literal("Length x Width x Height.").withStyle(ChatFormatting.GREEN));
+            components.add(Component.literal("9x9x14 internal room size.").withStyle(ChatFormatting.GREEN));
+
+        } else {
             components.add(Component.literal("Hold SHIFT for more information").withStyle(ChatFormatting.BLUE));
+            components.add(Component.literal("Hold CTRL for room size").withStyle(ChatFormatting.BLUE));
         }
 
     }
