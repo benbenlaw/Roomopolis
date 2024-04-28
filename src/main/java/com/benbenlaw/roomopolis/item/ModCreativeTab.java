@@ -37,6 +37,7 @@ public class ModCreativeTab {
 
                 output.accept(ModItems.WALL_REMOVER_KEY_1.get());
                 output.accept(ModItems.WALL_REMOVER_KEY_2.get());
+                output.accept(ModItems.WALL_REMOVER_KEY_3.get());
 
                 output.accept(ModItems.FIRE_KEY.get());
                 output.accept(ModItems.EARTH_KEY.get());

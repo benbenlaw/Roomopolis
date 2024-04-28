@@ -1,5 +1,16 @@
 Changelog Roomopolis
 
+1.0.2
+
+Added 14x9 wall key remover
+Fixed lang files for some keys showing the wrong information
+Keys now show a warning of block removal when the key is held over a room block in the world!
+
+1.0.1
+
+Fixed room key block remover not working in some cases
+    - Smart replacing checks if the 4 blocks adjacent to the room key block are the same block and then replaces the key block with that block
+
 1.0.0
 
 Added roomopolis to BBL mods

@@ -80,7 +80,6 @@ public class ShortRoomKey extends Item {
             }
 
             else {
-                assert player != null;
                 player.sendSystemMessage(Component.literal("No room key block found!").withStyle(ChatFormatting.RED));
             }
 

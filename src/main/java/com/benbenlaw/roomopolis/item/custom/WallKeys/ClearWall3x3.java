@@ -49,7 +49,7 @@ public class ClearWall3x3 extends Item {
                 }
 
                 if (direction == Direction.SOUTH || direction == Direction.EAST || direction == Direction.WEST || direction == Direction.NORTH) {
-                    player.sendSystemMessage(Component.literal("Placing Corridor and Clearing Wall (3x3)").withStyle(ChatFormatting.GREEN));
+                    player.sendSystemMessage(Component.literal("Clearing Wall (3x3)").withStyle(ChatFormatting.GREEN));
                     shrinkItem(player, stack);
                 }
 

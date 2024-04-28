@@ -46,7 +46,7 @@ public class RoomTopperKey extends Item {
                 if (direction == Direction.DOWN) {
                     Rooms.ROOM_TOPPER.construct(level, adjustmentHeightPos.above(2), rotation);
                     Clear.CLEAR_9x9_UP.construct(level, adjustmentHeightPos.above());
-                    player.sendSystemMessage(Component.literal("Placing Normal Room and Clearing Floor/Roof (9x9)").withStyle(ChatFormatting.GREEN));
+                    player.sendSystemMessage(Component.literal("Placing Room Topper and Clearing Roof (9x9)").withStyle(ChatFormatting.GREEN));
                     shrinkItem(player, stack);
                 }
                 else {

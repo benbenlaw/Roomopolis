@@ -14,6 +14,7 @@ public class Clear {
 
     public static final IMultiBlockPattern CLEAR_7x4;
     public static final IMultiBlockPattern CLEAR_9x4;
+    public static final IMultiBlockPattern CLEAR_9x14;
     public static final IMultiBlockPattern CLEAR_3x3;
     public static final IMultiBlockPattern CLEAR_9x9;
     public static final IMultiBlockPattern CLEAR_9x9_UP;
@@ -117,6 +118,32 @@ public class Clear {
         pattern.block(' ', air::defaultBlockState);
 
         CLEAR_9x4 = pattern.build();
+    }
+
+    static {
+
+        SimpleMultiBlockAislePatternBuilder pattern = SimpleMultiBlockAislePatternBuilder.start()
+                .aisle(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+                .aisle(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+                .aisle(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+                .aisle(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+                .aisle(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+                .aisle(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+                .aisle(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+                .aisle(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+                .aisle(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+                .aisle(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+                .aisle(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+                .aisle(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+                .aisle(" ", " ", " ", " ", "*", " ", " ", " ", " ")
+                .aisle(" ", " ", " ", " ", " ", " ", " ", " ", " ")
+                .where('*', a -> a.getState().is(air))
+                .where(' ', a -> a.getState().is(air)
+                );
+        pattern.block('*', air::defaultBlockState);
+        pattern.block(' ', air::defaultBlockState);
+
+        CLEAR_9x14 = pattern.build();
     }
 
 }

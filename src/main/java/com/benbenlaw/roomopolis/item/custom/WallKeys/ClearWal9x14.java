@@ -21,8 +21,8 @@ import org.mangorage.mangomultiblock.core.misc.Util;
 
 import java.util.List;
 
-public class ClearWal9x4 extends Item {
-    public ClearWal9x4(Properties pProperties) {
+public class ClearWal9x14 extends Item {
+    public ClearWal9x14(Properties pProperties) {
         super(pProperties);
     }
 
@@ -42,14 +42,14 @@ public class ClearWal9x4 extends Item {
                 Rotation rotation = Util.DirectionToRotation(direction);
 
                 switch (direction) {
-                    case NORTH -> Clear.CLEAR_9x4.construct(level, adjustmentHeightPos.above(), rotation);
-                    case SOUTH -> Clear.CLEAR_9x4.construct(level, adjustmentHeightPos.above(), rotation);
-                    case WEST -> Clear.CLEAR_9x4.construct(level, adjustmentHeightPos.above(), rotation);
-                    case EAST -> Clear.CLEAR_9x4.construct(level, adjustmentHeightPos.above(), rotation);
+                    case NORTH -> Clear.CLEAR_9x14.construct(level, adjustmentHeightPos.above(), rotation);
+                    case SOUTH -> Clear.CLEAR_9x14.construct(level, adjustmentHeightPos.above(), rotation);
+                    case WEST -> Clear.CLEAR_9x14.construct(level, adjustmentHeightPos.above(), rotation);
+                    case EAST -> Clear.CLEAR_9x14.construct(level, adjustmentHeightPos.above(), rotation);
                 }
 
                 if (direction == Direction.SOUTH || direction == Direction.EAST || direction == Direction.WEST || direction == Direction.NORTH) {
-                    player.sendSystemMessage(Component.literal("Clearing Wall (9x4)").withStyle(ChatFormatting.GREEN));
+                    player.sendSystemMessage(Component.literal("Clearing Wall (9x14)").withStyle(ChatFormatting.GREEN));
                     shrinkItem(player, stack);
                 }
 
@@ -76,7 +76,7 @@ public class ClearWal9x4 extends Item {
         }
         if (Screen.hasControlDown()) {
             components.add(Component.literal("Length x Width x Height.").withStyle(ChatFormatting.GREEN));
-            components.add(Component.literal("1x9x4 internal room size.").withStyle(ChatFormatting.GREEN));
+            components.add(Component.literal("1x7x14 internal room size.").withStyle(ChatFormatting.GREEN));
 
         } else {
             components.add(Component.literal("Hold SHIFT for more information").withStyle(ChatFormatting.BLUE));

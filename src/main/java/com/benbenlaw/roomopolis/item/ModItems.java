@@ -14,6 +14,7 @@ import com.benbenlaw.roomopolis.item.custom.RoomKeys.NormalRoomKey;
 import com.benbenlaw.roomopolis.item.custom.RoomKeys.RoomTopperKey;
 import com.benbenlaw.roomopolis.item.custom.RoomKeys.ShortRoomKey;
 import com.benbenlaw.roomopolis.item.custom.RoomKeys.TallRoomKey;
+import com.benbenlaw.roomopolis.item.custom.WallKeys.ClearWal9x14;
 import com.benbenlaw.roomopolis.item.custom.WallKeys.ClearWall3x3;
 import com.benbenlaw.roomopolis.item.custom.WallKeys.ClearWal9x4;
 import net.minecraft.world.item.Item;
@@ -44,6 +45,9 @@ public class ModItems {
     public static final RegistryObject<Item> WALL_REMOVER_KEY_1 = ITEMS.register("wall_remover_key_1", () -> new ClearWal9x4(
             new Item.Properties()));
     public static final RegistryObject<Item> WALL_REMOVER_KEY_2 = ITEMS.register("wall_remover_key_2", () -> new ClearWall3x3(
+            new Item.Properties()));
+
+    public static final RegistryObject<Item> WALL_REMOVER_KEY_3 = ITEMS.register("wall_remover_key_3", () -> new ClearWal9x14(
             new Item.Properties()));
 
     //Elemental Keys

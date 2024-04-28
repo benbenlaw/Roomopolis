@@ -1,6 +1,7 @@
 package com.benbenlaw.roomopolis.block;
 
 import com.benbenlaw.Roomopolis;
+import com.benbenlaw.roomopolis.block.custom.RoomBlock;
 import com.benbenlaw.roomopolis.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -24,16 +25,14 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, Roomopolis.MOD_ID);
 
     public static final RegistryObject<Block> BASIC_ROOM_BLOCK = registerBlock("basic_room_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).sound(SoundType.METAL)));
+            () -> new RoomBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK).sound(SoundType.METAL)));
 
     public static final RegistryObject<Block> BASIC_ROOM_KEY_BLOCK = registerBlock("basic_room_key_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).sound(SoundType.METAL)));
-
+            () -> new RoomBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK).sound(SoundType.METAL)));
     public static final RegistryObject<Block> ADVANCED_ROOM_KEY_BLOCK = registerBlock("advanced_room_key_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).sound(SoundType.METAL)));
-
+            () -> new RoomBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK).sound(SoundType.METAL)));
     public static final RegistryObject<Block> ELITE_ROOM_KEY_BLOCK = registerBlock("elite_room_key_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).sound(SoundType.METAL)));
+            () -> new RoomBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK).sound(SoundType.METAL)));
 
 
     //Light Level When Interacted With

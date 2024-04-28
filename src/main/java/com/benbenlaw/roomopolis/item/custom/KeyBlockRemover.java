@@ -42,78 +42,65 @@ public class KeyBlockRemover extends Item {
         Direction direction = context.getClickedFace();
         ItemStack stack = context.getItemInHand();
 
+        boolean blocksMatch = false;
+
         if (!level.isClientSide()) {
 
             BlockPos leftPos = null;
             BlockPos rightPos = null;
+            BlockPos upPos = null;
+            BlockPos downPos = null;
 
             switch (direction) {
-                case NORTH:
+                case NORTH, SOUTH:
                     leftPos = blockPos.west();
                     rightPos = blockPos.east();
+                    upPos = blockPos.above();
+                    downPos = blockPos.below();
                     break;
-                case SOUTH:
-                    leftPos = blockPos.east();
-                    rightPos = blockPos.west();
-                    break;
-                case WEST:
-                    leftPos = blockPos.south();
-                    rightPos = blockPos.north();
-                    break;
-                case EAST:
+                case WEST, EAST:
                     leftPos = blockPos.north();
                     rightPos = blockPos.south();
+                    upPos = blockPos.above();
+                    downPos = blockPos.below();
                     break;
 
-                case UP:
-                    leftPos = blockPos.above();
-                    rightPos = blockPos.below();
-                    break;
-                case DOWN:
-                    leftPos = blockPos.below();
-                    rightPos = blockPos.above();
-                    break;
+                case UP, DOWN:
+                    leftPos = blockPos.north();
+                    rightPos = blockPos.south();
+                    upPos = blockPos.east();
+                    downPos = blockPos.west();
             }
 
-            BlockPos abovePos = blockPos.above();
-            BlockPos belowPos = blockPos.below();
+            BlockState leftBlock = level.getBlockState(leftPos);
+            BlockState rightBlock = level.getBlockState(rightPos);
+            BlockState upBlock = level.getBlockState(upPos);
+            BlockState downBlock = level.getBlockState(downPos);
+
+            if (leftBlock == rightBlock && upBlock == downBlock && leftBlock == upBlock) {
+                if (leftBlock != Blocks.AIR.defaultBlockState()) {
+                    blocksMatch = true;
+                }
+            }
 
             assert player != null;
+
             if (level.getBlockState(blockPos).is(ModBlocks.BASIC_ROOM_KEY_BLOCK.get())) {
-                Block sameBlockSides = level.getBlockState(abovePos).getBlock();
-                BlockState sameBlockSidesState = level.getBlockState(abovePos);
 
-                Block sameBlockUp = level.getBlockState(blockPos.west()).getBlock();
-
-                if (sameBlockSides != Blocks.AIR && sameBlockSidesState.is(ModTags.Blocks.KEY_BLOCK_SMART_BLOCKS)) {
-                    if (level.getBlockState(belowPos).is(sameBlockSides) && level.getBlockState(leftPos).is(sameBlockSides) && level.getBlockState(rightPos).is(sameBlockSides)) {
-                        String translatedName = sameBlockSides.getName().getString();
-                        level.setBlockAndUpdate(blockPos, sameBlockSides.defaultBlockState());
-                        player.sendSystemMessage(Component.literal("Removing Key Block and replacing smartly with " + translatedName).withStyle(ChatFormatting.GREEN));
+                if (blocksMatch) {
+                    BlockState keyBlock = leftBlock;
+                    if (keyBlock.is(ModTags.Blocks.KEY_BLOCK_SMART_BLOCKS)) {
+                        level.setBlockAndUpdate(blockPos, keyBlock);
+                        player.sendSystemMessage(Component.literal("Removing Key Block and replacing smartly with " + keyBlock.getBlock().getName().getString()).withStyle(ChatFormatting.GREEN));
                         shrinkItem(player, stack);
                     }
-                }
-
-                else if (sameBlockUp != Blocks.AIR && level.getBlockState(blockPos.west()).is(ModTags.Blocks.KEY_BLOCK_SMART_BLOCKS)) {
-                    if (level.getBlockState(blockPos.east()).is(sameBlockUp) && level.getBlockState(blockPos.north()).is(sameBlockUp) && level.getBlockState(blockPos.south()).is(sameBlockUp)) {
-                        String translatedName = sameBlockUp.getName().getString();
-                        level.setBlockAndUpdate(blockPos, sameBlockUp.defaultBlockState());
-                        player.sendSystemMessage(Component.literal("Removing Key Block and replacing smartly with " + translatedName).withStyle(ChatFormatting.GREEN));
-                        shrinkItem(player, stack);
-                    }
-                }
-
-                else {
+                } else {
                     level.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState());
                     player.sendSystemMessage(Component.literal("Removing Key Block").withStyle(ChatFormatting.GREEN));
                     shrinkItem(player, stack);
                 }
-
             }
 
-            else {
-                player.sendSystemMessage(Component.literal("Right Click on a Key Block to remove! This cannot be undone!").withStyle(ChatFormatting.RED));
-            }
         }
         return super.useOn(context);
     }
