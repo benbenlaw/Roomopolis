@@ -1,0 +1,1101 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2025-02-19 18:53:09 +0000"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:plains": "2025-02-19 18:53:10 +0000"
+    },
+    "done": false
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/yellow": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/white": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/pink": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/brown": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/red": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/light_blue": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/gray": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/lime": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/purple": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/blue": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/light_gray": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/magenta": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/cyan": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/orange": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/green": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_dirt/black": {
+    "criteria": {
+      "has_item": "2025-02-19 18:53:29 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/white_bed": {
+    "criteria": {
+      "has_white_wool": "2025-02-20 09:14:13 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/painting": {
+    "criteria": {
+      "has_wool": "2025-02-20 09:14:13 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/white_carpet": {
+    "criteria": {
+      "has_white_wool": "2025-02-20 09:14:13 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/white_banner": {
+    "criteria": {
+      "has_white_wool": "2025-02-20 09:14:13 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/purple_bed": {
+    "criteria": {
+      "has_purple_wool": "2025-02-20 09:14:25 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/purple_carpet": {
+    "criteria": {
+      "has_purple_wool": "2025-02-20 09:14:25 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/purple_banner": {
+    "criteria": {
+      "has_purple_wool": "2025-02-20 09:14:25 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/magenta_banner": {
+    "criteria": {
+      "has_magenta_wool": "2025-02-20 09:14:26 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/magenta_bed": {
+    "criteria": {
+      "has_magenta_wool": "2025-02-20 09:14:26 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/magenta_carpet": {
+    "criteria": {
+      "has_magenta_wool": "2025-02-20 09:14:26 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/light_blue_bed": {
+    "criteria": {
+      "has_light_blue_wool": "2025-02-20 09:32:46 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/light_blue_carpet": {
+    "criteria": {
+      "has_light_blue_wool": "2025-02-20 09:32:46 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/light_blue_banner": {
+    "criteria": {
+      "has_light_blue_wool": "2025-02-20 09:32:46 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/blue_bed": {
+    "criteria": {
+      "has_blue_wool": "2025-02-20 09:32:48 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/blue_banner": {
+    "criteria": {
+      "has_blue_wool": "2025-02-20 09:32:48 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/blue_carpet": {
+    "criteria": {
+      "has_blue_wool": "2025-02-20 09:32:48 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/green": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/lime": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/black": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/magenta": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/cyan": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/green": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/lime": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/cyan": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/light_blue": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/black": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/light_gray": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/light_blue": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/blue": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/white": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/light_gray": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/brown": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/lime": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/pink": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/cyan": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/blue": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/gray": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/blue": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/lime": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/yellow": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/blue": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/brown": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/yellow": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/red": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/black": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/orange": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/purple": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/light_blue": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/purple": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/green": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/light_gray": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/brown": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/gray": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/yellow": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/yellow": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/cyan": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/purple": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/gray": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/gray": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/red": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/red": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/light_blue": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/brown": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/red": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/white": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/magenta": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/yellow": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/pink": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/gray": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/magenta": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/pink": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/magenta": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/black": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/brown": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/blue": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/lime": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/pink": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/green": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/white": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/pink": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/orange": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/red": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/light_gray": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/light_blue": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/slab/orange": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/orange": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/white": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/purple": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/cyan": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/pressure_plate/orange": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/white": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/black": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/green": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/stairs/magenta": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/button/light_gray": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/braid/wall/purple": {
+    "criteria": {
+      "has_item": "2025-02-20 10:32:25 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2025-02-20 12:03:20 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/yellow": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/gray": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/green": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/light_blue": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/green": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/orange": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/lime": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/white": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/black": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/blue": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/gray": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/black": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/orange": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/black": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/yellow": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/cyan": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/green": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/pink": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/lime": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/magenta": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/birch_planks": {
+    "criteria": {
+      "has_logs": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/black": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/blue": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/white": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/charcoal": {
+    "criteria": {
+      "has_log": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/green": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/red": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/pink": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/red": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/gray": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/red": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/white": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/purple": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/red": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/cyan": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/brown": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/magenta": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/white": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/light_gray": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/light_blue": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/orange": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/orange": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/brown": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/yellow": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/pink": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/magenta": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/brown": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/purple": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/yellow": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/light_gray": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/gray": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/brown": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/light_gray": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/light_gray": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/lime": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/cyan": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/magenta": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/blue": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_wood/cyan": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/light_blue": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/purple": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/colored_log/light_blue": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/pink": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/lime": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_wood/blue": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "caveopolis:recipes/worktable/worktable/vanilla/stripped_colored_log/purple": {
+    "criteria": {
+      "has_item": "2025-02-20 13:06:57 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/diamond": {
+    "criteria": {
+      "has_diamond_block": "2025-02-21 18:17:20 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_ingot_from_gold_block": {
+    "criteria": {
+      "has_gold_block": "2025-02-21 18:36:41 +0000"
+    },
+    "done": true
+  },
+  "DataVersion": 3955
+}

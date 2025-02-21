@@ -1,25 +1,21 @@
 {
-  "block.roomopolis.basic_room_block": "Room Block",
-  "block.roomopolis.basic_room_key_block": "Basic Room Key Block",
-  "block.roomopolis.advanced_room_key_block": "Advanced Room Key Block",
-  "block.roomopolis.elite_room_key_block": "Shrine Activation Key Block",
+  "block.roomopolis.room_block": "Room Block",
+  "block.roomopolis.room_key_block": "Room Key Block",
 
-  "item.roomopolis.corridor_key_1": "Corridor Key 1",
-  "item.roomopolis.corridor_key_2": "Corridor Key 2",
-  "item.roomopolis.corridor_key_3": "Corridor Key 3",
-  "item.roomopolis.short_room_key": "Short Room Key",
-  "item.roomopolis.normal_room_key": "Normal Room Key",
-  "item.roomopolis.tall_room_key": "Tall Room Key",
-  "item.roomopolis.key_block_remover": "Key Block Remover",
-  "item.roomopolis.room_topper_key": "Room Topper Key",
-  "item.roomopolis.wall_remover_key_1": "Wall Remover Key (9x4)",
-  "item.roomopolis.wall_remover_key_2": "Wall Remover Key (3x3)",
-  "item.roomopolis.wall_remover_key_3": "Wall Remover Key (9x14)",
+  "item.roomopolis.tiny_room_key": "Tiny Room Key",
+  "item.roomopolis.small_room_key": "Small Room Key",
+  "item.roomopolis.medium_room_key": "Medium Room Key",
+  "item.roomopolis.large_room_key": "Large Room Key",
+  "item.roomopolis.interconnected_wall_removing_key": "INTERCONNECTED_WALL_REMOVING_KEY",
 
-  "item.roomopolis.fire_key": "Fire Key",
-  "item.roomopolis.air_key": "Air Key",
-  "item.roomopolis.water_key": "Water Key",
-  "item.roomopolis.earth_key": "Earth Key",
+  "item.key.placed": "Placed Template",
+  "item.key.area_not_empty": "Area not clear!",
+  "item.key.requires_key_block": "This Key requires a %s to be interacted with!",
+
+  "tooltips.key.shift_held": "Shift held: Place a Key Block",
+  "tooltips.key.template_size": "Template Size: %s, %s, %s",
+  "tooltips.key.requires_key_block": "Requires: %s to use the key on!",
+  "tooltips.key.wall_remover": "Remove the 2 connecting blocks between rooms!",
 
   "itemGroup.roomopolis": "Roomopolis"
 }

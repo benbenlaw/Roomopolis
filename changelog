@@ -1,5 +1,56 @@
 Changelog Roomopolis
 
+//Structure templates should have "doors" facing north if inside the structure for correct rotations to apply
+
+2.0.1
+Changed ItemBuilder to
+(Properties properties, String templateId, int heightAdjustment)
+by default keys created like this need no key block to be placed
+Added 2nd ItemBuilder
+(Properties properties, String templateId, int heightAdjustment, String keyBlock)
+4th parameter is the string name of the block that is required to be placed to use the key, can be any block eg "minecraft:stone"
+Added 3rd ItemBuilder
+(String templateId, int heightAdjustment)
+Simply creates a key item that creates a structure with height adjustment
+Resource Location for the templateId is now parsed in the ItemBuilder, you just need to pass the string now eg "roomopolis:tiny_room"
+
+Tweaked translations to be more clear with the block requirements
+
+
+
+2.0.0
+Updated to minecraft 1.21.1
+Basically a full rewrite of the mod
+Firstly we now use structure files instead of hard coded rooms inside the mod
+This allows for easier room creation and more customization
+Rooms can be created in game and exported using structure blocks
+Room sizes is now 48x48x48
+Room keys can either require a key block to be used or not
+Room keys only place if the area its placing into is clear
+Custom keys should be able to be create with kubjes
+Height placement is controlled by the key item in the item builder to allow better placements of templates
+
+Using The KeyItem Class
+```js
+console.info('Hello, World! (Loaded startup example script)')
+
+const ItemProperties = Java.loadClass("net.minecraft.world.item.Item$Properties");
+const ResourceLocation = Java.loadClass("net.minecraft.resources.ResourceLocation");
+const $keyItem = Java.loadClass('com.benbenlaw.roomopolis.item.KeyItem')
+
+StartupEvents.registry('item', event => {
+    event.createCustom("tes1s", () => new $keyItem(new ItemProperties(), ResourceLocation.parse("roomopolis:tiny_room"), 0, true));
+})
+```
+
+Comes with 4 room items tiny, small, medium, large
+If creating rooms that come off other rooms place a "door" shape in the structure facing north (if inside the structure) for correct rotations to apply
+Room that require a key block will remove the key block and the block below to "link" the rooms together
+
+1.0.4
+
+Actually fixed the short room key placing block below the allow height
+
 1.0.2
 
 Added 14x9 wall key remover
