@@ -55,6 +55,7 @@ public class KeyItem extends Item {
         super(new Item.Properties());
         this.templateId = ResourceLocation.parse(templateId);
         this.heightAdjustment = heightAdjustment;
+
     }
 
     public KeyItem(Properties properties, String templateId, int heightAdjustment, String keyBlock) {
