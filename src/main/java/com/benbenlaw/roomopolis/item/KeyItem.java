@@ -4,6 +4,7 @@ import com.benbenlaw.core.item.TooltipUtil;
 import com.benbenlaw.core.util.DirectionUtil;
 import com.benbenlaw.roomopolis.block.RoomopolisBlocks;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.BlockPos;
@@ -12,6 +13,7 @@ import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -179,18 +181,20 @@ public class KeyItem extends Item {
         }
     }
 
-    @Override
-    public void inventoryTick(@NotNull ItemStack stack, @NotNull Level level, @NotNull Entity entity, int p_41407_, boolean p_41408_) {
 
+    @Override
+    public void inventoryTick(@NotNull ItemStack stack, @NotNull Level level, Entity entity, int p_41407_, boolean p_41408_) {
         if (templateSize == null && !level.isClientSide()) {
             StructureTemplateManager structureManager = Objects.requireNonNull(level.getServer()).getStructureManager();
             Optional<StructureTemplate> optionalTemplate = structureManager.get(templateId);
+
             if (optionalTemplate.isPresent()) {
                 StructureTemplate template = optionalTemplate.get();
                 templateSize = template.getSize();
             }
         }
     }
+
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
 
