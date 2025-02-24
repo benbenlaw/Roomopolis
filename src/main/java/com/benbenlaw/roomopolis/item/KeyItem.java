@@ -42,27 +42,19 @@ public class KeyItem extends Item {
 
     public ResourceLocation templateId;
     public int heightAdjustment;
-    public Block keyBlock;
+    public Optional<Block> keyBlock;
     public boolean isPlaced;
     Vec3i templateSize;
-    public KeyItem(Properties properties, String templateId, int heightAdjustment) {
-        super(properties);
-        this.templateId = ResourceLocation.parse(templateId);
-        this.heightAdjustment = heightAdjustment;
-    }
-
-    public KeyItem(String templateId, int heightAdjustment) {
-        super(new Item.Properties());
-        this.templateId = ResourceLocation.parse(templateId);
-        this.heightAdjustment = heightAdjustment;
-
-    }
-
     public KeyItem(Properties properties, String templateId, int heightAdjustment, String keyBlock) {
         super(properties);
         this.templateId = ResourceLocation.parse(templateId);
         this.heightAdjustment = heightAdjustment;
-        this.keyBlock = BuiltInRegistries.BLOCK.get(ResourceLocation.parse(keyBlock));
+
+        if (keyBlock == null || keyBlock.isEmpty()) {
+            this.keyBlock = Optional.empty();
+        } else {
+            this.keyBlock = Optional.of(BuiltInRegistries.BLOCK.get(ResourceLocation.parse(keyBlock)));
+        }
     }
 
     @Override
@@ -76,8 +68,8 @@ public class KeyItem extends Item {
 
         if (!level.isClientSide()) {
 
-            if (keyBlock != null) {
-                if (state.is(keyBlock)) {
+            if (keyBlock.isPresent()) {
+                if (state.is(keyBlock.get())) {
                     createTemplate(level, rotation, facing, pos);
                     assert player != null;
                     if (isPlaced) {
@@ -91,7 +83,7 @@ public class KeyItem extends Item {
                     }
                 } else {
                     assert player != null;
-                    player.sendSystemMessage(Component.translatable("item.key.requires_key_block", keyBlock.getName()).withStyle(ChatFormatting.RED));
+                    player.sendSystemMessage(Component.translatable("item.key.requires_key_block", keyBlock.get().getName()).withStyle(ChatFormatting.RED));
                 }
             }
 
@@ -208,8 +200,7 @@ public class KeyItem extends Item {
             tooltipComponents.add(templateSize);
         }
         //Key Block Information
-        if (keyBlock != null) {
-            tooltipComponents.add(Component.translatable("tooltips.key.requires_key_block", keyBlock.getName()).withStyle(ChatFormatting.RED));
-        }
+        keyBlock.ifPresent(block ->
+                tooltipComponents.add(Component.translatable("tooltips.key.requires_key_block", block.getName()).withStyle(ChatFormatting.RED)));
     }
 }

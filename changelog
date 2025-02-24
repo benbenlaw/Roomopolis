@@ -16,7 +16,20 @@ Resource Location for the templateId is now parsed in the ItemBuilder, you just 
 
 Tweaked translations to be more clear with the block requirements
 
-
+2.0.1
+Added proper kubejs support
+```js
+StartupEvents.registry('item', event => {
+    //Create a custom key item like this
+    event.create("test_key", 'roomopolis_key')
+        //String location of the template you want to spawn example file is found here data/roomopolis/structures/tiny_room.nbt
+        .templateId("roomopolis:tiny_room")
+        //The structure is always placed a block behind the block you click on as the player, the height adjustment allows you to adjust the height postion the template is spawned
+        .heightAdjustment(1)
+        //keyBlock is optional and not needed, if a block is defined here keys will only work on that block
+        .keyBlock("minecraft:iron_block")
+})
+```
 
 2.0.0
 Updated to minecraft 1.21.1
