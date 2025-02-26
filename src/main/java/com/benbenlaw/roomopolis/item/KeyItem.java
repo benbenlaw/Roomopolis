@@ -3,6 +3,8 @@ package com.benbenlaw.roomopolis.item;
 import com.benbenlaw.core.item.TooltipUtil;
 import com.benbenlaw.core.util.DirectionUtil;
 import com.benbenlaw.roomopolis.block.RoomopolisBlocks;
+import com.benbenlaw.roomopolis.network.packet.GetStructureSizePacket;
+import com.benbenlaw.roomopolis.network.payload.GetStructureSizePayload;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
@@ -14,6 +16,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -31,6 +34,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
+import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
@@ -44,7 +48,7 @@ public class KeyItem extends Item {
     public int heightAdjustment;
     public Optional<Block> keyBlock;
     public boolean isPlaced;
-    Vec3i templateSize;
+    public Vec3i templateSize;
     public KeyItem(Properties properties, String templateId, int heightAdjustment, String keyBlock) {
         super(properties);
         this.templateId = ResourceLocation.parse(templateId);
@@ -55,7 +59,9 @@ public class KeyItem extends Item {
         } else {
             this.keyBlock = Optional.of(BuiltInRegistries.BLOCK.get(ResourceLocation.parse(keyBlock)));
         }
+
     }
+
 
     @Override
     public @NotNull InteractionResult useOn(UseOnContext context) {
@@ -174,33 +180,25 @@ public class KeyItem extends Item {
         }
     }
 
-
-    @Override
-    public void inventoryTick(@NotNull ItemStack stack, @NotNull Level level, Entity entity, int p_41407_, boolean p_41408_) {
-        if (templateSize == null && !level.isClientSide()) {
-            StructureTemplateManager structureManager = Objects.requireNonNull(level.getServer()).getStructureManager();
-            Optional<StructureTemplate> optionalTemplate = structureManager.get(templateId);
-
-            if (optionalTemplate.isPresent()) {
-                StructureTemplate template = optionalTemplate.get();
-                templateSize = template.getSize();
-            }
-        }
-    }
-
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-
-        //Size Information
-        if (templateSize != null) {
-            int templateWidth = templateSize.getX();
-            int templateHeight = templateSize.getY();
-            int templateLength = templateSize.getZ();
-            Component templateSize = Component.translatable("tooltips.key.template_size", templateWidth, templateHeight, templateLength).withStyle(ChatFormatting.GRAY);
-            tooltipComponents.add(templateSize);
+        if (templateSize == null && Minecraft.getInstance().player != null) {
+            PacketDistributor.sendToServer(new GetStructureSizePayload(templateId.toString()));
+            templateSize = KeyItemSizeCache.getTemplateSize(templateId);
         }
-        //Key Block Information
+
+        if (templateSize != null) {
+            Component templateSizeText = Component.translatable("tooltips.key.template_size",
+                    templateSize.getX(), templateSize.getY(), templateSize.getZ()).withStyle(ChatFormatting.GRAY);
+            tooltipComponents.add(templateSizeText);
+        }
+
         keyBlock.ifPresent(block ->
                 tooltipComponents.add(Component.translatable("tooltips.key.requires_key_block", block.getName()).withStyle(ChatFormatting.RED)));
     }
+
+
+
+
+
 }
