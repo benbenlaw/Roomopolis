@@ -1,9 +1,11 @@
 package com.benbenlaw;
 
 import com.benbenlaw.roomopolis.block.RoomopolisBlocks;
+import com.benbenlaw.roomopolis.item.RoomopolisCreativeTab;
 import com.benbenlaw.roomopolis.item.RoomopolisItems;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import org.slf4j.Logger;
 
@@ -14,11 +16,11 @@ public class Roomopolis {
     public static final String MOD_ID = "roomopolis";
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    public Roomopolis (final IEventBus eventBus, final ModContainer modContainer) {
 
-    public Roomopolis(IEventBus modEventBus) {
-
-        RoomopolisItems.register(modEventBus);
-        RoomopolisBlocks.register(modEventBus);
+        RoomopolisItems.ITEMS.register(eventBus);
+        RoomopolisBlocks.BLOCKS.register(eventBus);
+        RoomopolisCreativeTab.CREATIVE_MODE_TABS.register(eventBus);
 
     }
 

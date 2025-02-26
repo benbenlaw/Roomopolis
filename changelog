@@ -2,6 +2,11 @@ Changelog Roomopolis
 
 //Structure templates should have "doors" facing north if inside the structure for correct rotations to apply
 
+2.1.0
+Added Creative Tab
+Added Auto Updating
+Tweaked Main class file to follow bbl standards
+
 2.0.1
 Changed ItemBuilder to
 (Properties properties, String templateId, int heightAdjustment)
@@ -16,7 +21,6 @@ Resource Location for the templateId is now parsed in the ItemBuilder, you just 
 
 Tweaked translations to be more clear with the block requirements
 
-2.0.1
 Added proper kubejs support
 ```js
 StartupEvents.registry('item', event => {
