@@ -2,6 +2,21 @@ Changelog Roomopolis
 
 //Structure templates should have "doors" facing north if inside the structure for correct rotations to apply
 
+2.2.4
+Top clicked blocks no longer remove the blocks below them
+Improved top placing of keys places in front of the player with direction instead of standard placement
+Top interacted blocks no longer create "doors" in current area
+
+2.2.3
+Using a key on the ground (on the top of the block) will place in front of the player and add an additional 2 height to the placement
+Allows for easier placement of structures on the not using blocks
+
+2.2.2
+Added ConsumeKey if the key item should be consumed when used
+just add
+    .consumeKey(true)
+to consume the key when used
+
 2.2.1
 Added KeyItemSizeCache to store the size of the structure templates, hover event sends a packet to the server to get the size and save to the cache
 This allow the size to be shown in the tooltip of the key item without the item needed in the inventory (JEI and Creative show the sizes)

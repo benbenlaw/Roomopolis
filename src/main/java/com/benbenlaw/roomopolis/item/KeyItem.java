@@ -17,6 +17,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -48,11 +49,14 @@ public class KeyItem extends Item {
     public int heightAdjustment;
     public Optional<Block> keyBlock;
     public boolean isPlaced;
+    public boolean consumeKey;
     public Vec3i templateSize;
-    public KeyItem(Properties properties, String templateId, int heightAdjustment, String keyBlock) {
+
+    public KeyItem(Properties properties, String templateId, int heightAdjustment, String keyBlock, boolean consumeKey) {
         super(properties);
         this.templateId = ResourceLocation.parse(templateId);
         this.heightAdjustment = heightAdjustment;
+        this.consumeKey = consumeKey;
 
         if (keyBlock == null || keyBlock.isEmpty()) {
             this.keyBlock = Optional.empty();
@@ -71,38 +75,76 @@ public class KeyItem extends Item {
         BlockState state = level.getBlockState(pos);
         Rotation rotation = DirectionUtil.getRotationFromDirection(context.getClickedFace());
         Direction facing = context.getHorizontalDirection();
+        InteractionHand hand = context.getHand();
+        boolean removeDoorArea = true;
 
         if (!level.isClientSide()) {
+            assert player != null;
+            if (player.getItemInHand(hand).is(this)) {
 
-            if (keyBlock.isPresent()) {
-                if (state.is(keyBlock.get())) {
-                    createTemplate(level, rotation, facing, pos);
-                    assert player != null;
+                if (keyBlock.isPresent()) {
+                    if (state.is(keyBlock.get())) {
+
+                        if (context.getClickedFace() == Direction.DOWN) {
+                            player.sendSystemMessage(Component.translatable("item.key.invalid_placement").withStyle(ChatFormatting.RED));
+                            return InteractionResult.FAIL;
+                        }
+
+                        BlockPos placePosition = pos;
+
+                        if (context.getClickedFace() == Direction.UP) {
+                            placePosition = new BlockPos(pos.getX(), pos.getY() + 3, pos.getZ());
+                            rotation = DirectionUtil.getRotationFromDirection(context.getHorizontalDirection().getOpposite());
+                            removeDoorArea = false;
+                        }
+
+                        createTemplate(level, rotation, facing, placePosition); // Pass adjusted position
+
+                        if (isPlaced) {
+                            player.sendSystemMessage(Component.translatable("item.key.placed").withStyle(ChatFormatting.GREEN));
+                            if (removeDoorArea) {
+                                level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
+                                level.setBlockAndUpdate(pos.below(), Blocks.AIR.defaultBlockState());
+                                level.sendBlockUpdated(pos, level.getBlockState(pos), level.getBlockState(pos), Block.UPDATE_ALL);
+                                level.sendBlockUpdated(pos.below(), level.getBlockState(pos.below()), level.getBlockState(pos.below()), Block.UPDATE_ALL);
+                            }
+                            if (consumeKey) {
+                                player.getItemInHand(hand).shrink(1);
+                            }
+                        } else {
+                            player.sendSystemMessage(Component.translatable("item.key.area_not_empty").withStyle(ChatFormatting.RED));
+                        }
+                    } else {
+                        player.sendSystemMessage(Component.translatable("item.key.requires_key_block", keyBlock.get().getName()).withStyle(ChatFormatting.RED));
+                    }
+                } else {
+
+                    if (context.getClickedFace() == Direction.DOWN) {
+                        player.sendSystemMessage(Component.translatable("item.key.invalid_placement").withStyle(ChatFormatting.RED));
+                        return InteractionResult.FAIL;
+                    }
+
+                    BlockPos placePosition = pos;
+
+                    if (context.getClickedFace() == Direction.UP) {
+                        placePosition = new BlockPos(pos.getX(), pos.getY() + 3, pos.getZ());
+                        rotation = DirectionUtil.getRotationFromDirection(context.getHorizontalDirection().getOpposite());
+                    }
+
+                    createTemplate(level, rotation, facing, placePosition);
+
                     if (isPlaced) {
                         player.sendSystemMessage(Component.translatable("item.key.placed").withStyle(ChatFormatting.GREEN));
-                        level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                        level.setBlockAndUpdate(pos.below(), Blocks.AIR.defaultBlockState());
-                        level.sendBlockUpdated(pos, level.getBlockState(pos), level.getBlockState(pos), Block.UPDATE_ALL);
-                        level.sendBlockUpdated(pos.below(), level.getBlockState(pos.below()), level.getBlockState(pos.below()), Block.UPDATE_ALL);
+                        if (consumeKey) {
+                            player.getItemInHand(hand).shrink(1);
+                        }
                     } else {
                         player.sendSystemMessage(Component.translatable("item.key.area_not_empty").withStyle(ChatFormatting.RED));
                     }
-                } else {
-                    assert player != null;
-                    player.sendSystemMessage(Component.translatable("item.key.requires_key_block", keyBlock.get().getName()).withStyle(ChatFormatting.RED));
-                }
-            }
-
-            else {
-                createTemplate(level, rotation, facing, pos);
-                assert player != null;
-                if (isPlaced) {
-                    player.sendSystemMessage(Component.translatable("item.key.placed").withStyle(ChatFormatting.GREEN));
-                } else {
-                    player.sendSystemMessage(Component.translatable("item.key.area_not_empty").withStyle(ChatFormatting.RED));
                 }
             }
         }
+
 
         isPlaced = false;
         return super.useOn(context);
@@ -185,6 +227,12 @@ public class KeyItem extends Item {
         if (templateSize == null && Minecraft.getInstance().player != null) {
             PacketDistributor.sendToServer(new GetStructureSizePayload(templateId.toString()));
             templateSize = KeyItemSizeCache.getTemplateSize(templateId);
+        }
+
+        if (consumeKey) {
+            tooltipComponents.add(Component.translatable("tooltips.key.consume_key").withStyle(ChatFormatting.GRAY));
+        } else {
+            tooltipComponents.add(Component.translatable("tooltips.key.retain_key").withStyle(ChatFormatting.GRAY));
         }
 
         if (templateSize != null) {

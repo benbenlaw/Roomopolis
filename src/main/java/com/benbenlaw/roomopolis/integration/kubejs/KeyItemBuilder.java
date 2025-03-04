@@ -11,6 +11,7 @@ public class KeyItemBuilder extends ItemBuilder {
     private String templateId;
     private int heightAdjustment;
     private String keyBlock;
+    private boolean consumeKey = true;
 
     public KeyItemBuilder(ResourceLocation i) {
         super(i);
@@ -30,18 +31,22 @@ public class KeyItemBuilder extends ItemBuilder {
 
     @Info("The block to use as the key eg minecraft:iron_block, this is not required")
     public KeyItemBuilder keyBlock(String keyBlock) {
-
         if (keyBlock.isEmpty()) {
             this.keyBlock = null;
         } else {
             this.keyBlock = keyBlock;
         }
+        return this;
+    }
 
+    @Info("Is the key consumed when used")
+    public KeyItemBuilder consumeKey(boolean consumeKey) {
+        this.consumeKey = consumeKey;
         return this;
     }
 
     @Override
     public Item createObject() {
-        return new KeyItem(createItemProperties(), templateId, heightAdjustment, keyBlock);
+        return new KeyItem(createItemProperties(), templateId, heightAdjustment, keyBlock, consumeKey);
     }
 }

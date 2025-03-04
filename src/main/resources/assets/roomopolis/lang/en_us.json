@@ -14,6 +14,8 @@
 
   "tooltips.key.shift_held": "Shift held: Place a Key Block",
   "tooltips.key.template_size": "Template Size: %s, %s, %s",
+  "tooltips.key.consume_key": "Key will be consumed on use!",
+  "tooltips.key.retain_key": "Key is not consumed on use!",
   "tooltips.key.requires_key_block": "Requires: %s to use the key on!",
   "tooltips.key.wall_remover": "Remove the 2 connecting blocks between rooms!",
 
