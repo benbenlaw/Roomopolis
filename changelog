@@ -2,6 +2,9 @@ Changelog Roomopolis
 
 //Structure templates should have "doors" facing north if inside the structure for correct rotations to apply
 
+2.2.5
+Added size check to prevent large structures (bigger than 48x48x48) from being placed
+
 2.2.4
 Top clicked blocks no longer remove the blocks below them
 Improved top placing of keys places in front of the player with direction instead of standard placement

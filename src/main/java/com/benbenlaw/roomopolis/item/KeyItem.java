@@ -98,7 +98,13 @@ public class KeyItem extends Item {
                             removeDoorArea = false;
                         }
 
-                        createTemplate(level, rotation, facing, placePosition); // Pass adjusted position
+                        // Check if structure exceeds size limits before creating template
+                        if (isStructureTooLarge()) {
+                            player.sendSystemMessage(Component.translatable("item.key.too_large").withStyle(ChatFormatting.RED));
+                            return InteractionResult.FAIL;
+                        }
+
+                        createTemplate(level, rotation, facing, placePosition);
 
                         if (isPlaced) {
                             player.sendSystemMessage(Component.translatable("item.key.placed").withStyle(ChatFormatting.GREEN));
@@ -131,6 +137,12 @@ public class KeyItem extends Item {
                         rotation = DirectionUtil.getRotationFromDirection(context.getHorizontalDirection().getOpposite());
                     }
 
+                    // Check if structure exceeds size limits before creating template
+                    if (isStructureTooLarge()) {
+                        player.sendSystemMessage(Component.translatable("item.key.too_large").withStyle(ChatFormatting.RED));
+                        return InteractionResult.FAIL;
+                    }
+
                     createTemplate(level, rotation, facing, placePosition);
 
                     if (isPlaced) {
@@ -145,9 +157,16 @@ public class KeyItem extends Item {
             }
         }
 
-
         isPlaced = false;
         return super.useOn(context);
+    }
+
+    private boolean isStructureTooLarge() {
+        int sizeX = templateSize.getX();
+        int sizeY = templateSize.getY();
+        int sizeZ = templateSize.getZ();
+
+        return sizeX > 48 || sizeY > 48 || sizeZ > 48;
     }
 
     public void createTemplate(Level level, Rotation rotation, Direction facing, BlockPos pos) {
